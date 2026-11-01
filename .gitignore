@@ -1,0 +1,12 @@
+# IDE / Editor
+.idea/
+*.iml
+.vscode/
+
+# Build outputs
+out/
+target/
+*.class
+
+# Archives
+*.zip
