@@ -1,4 +1,4 @@
-**Tugas 2 Praktikum PBO: Inheritance, Composition, dan Polymorphism**
+## **Tugas 2 Praktikum PBO: Inheritance, Composition, dan Polymorphism**
 
 **Identitas Mahasiswa:**
 - **Nama:** Rahadatul Qudsi
@@ -37,7 +37,7 @@ Tugas 2 ini berfokus pada penerapan empat pilar dasar dan modul Praktikum 6 dan 
 ## 📂 Struktur Project
 
 ```text
-Tugas2_Inherit-polymorph-Npmawalakhir/
+Tugas2_Inherit-polymorph-2526/
 ├── .gitignore
 ├── README.md
 └── src/
@@ -67,145 +67,181 @@ Tugas2_Inherit-polymorph-Npmawalakhir/
         ├── Keranjang.java
         └── TesSoal4.java
 ```
+---
 
-**## Cara Menjalankan Program**
 
-**Prasyarat: **
-Java Development Kit (JDK) versi 17 atau lebih baru.
-IDE pilihan (IntelliJ IDEA, Eclipse, atau VS Code).
+### 📋 Prasyarat
+* **Java Development Kit (JDK):** Versi 21 atau yang lebih baru.
+* **Integrated Development Environment (IDE):** IntelliJ IDEA, Eclipse, VS Code, atau editor teks pilihan Anda.
 
-Menjalankan via Command Line (Terminal / CMD): 
-javac src/soal1/*.java
-java -cp src soal1.TesSoal1 (begitu juga selanjutnya)
+---
 
-**## Contoh Output :**
-**1. Soal 1 (Hierarki Perangkat Elektronik)**
-```text 
-Asus | garansi 24 bulan | RAM 16 GB | layar 14.0 inci
-Samsung | garansi 12 bulan | 128 GB | 3 kamera
-MSI | garansi 18 bulan | RAM 32 GB | layar 15.6 inci | GPU RTX 4060
-Pajak laptop: Rp800000
-Promo laptop 10 persen: Rp7200000
-```
+## 🚀 Cara Menjalankan Program
+#### Cara 1: Menggunakan IntelliJ IDEA
+1. Buka **IntelliJ IDEA** > pilih **Open** > buka folder root proyek (`-Tugas2_Inherit-polymorph-2526`).
+2. Klik kanan folder `src` > pilih **Mark Directory as** > **Sources Root** (pastikan folder berubah warna biru).
+3. Buka **File** > **Project Structure** > **Project**, lalu atur SDK ke **JDK 21** (atau versi yang terinstal).
+4. Buka salah satu file pengujian di folder `src/`: `soal1/TesSoal1.java`, `soal2/TesSoal2.java`, `soal3/TesSoal3.java`, atau `soal4/TesSoal4.java`.
+5. Jalankan program dengan mengklik ikon **Run** (segitiga hijau) atau tekan tombol **Shift + F10**.
 
-**2. Soal 2 (Analisis Output & Polimorfisme)**
-```text
-=== BAGIAN A ===
-Hewan dibuat: Tom
-Kucing dibuat
-Tom makan
-meong
-meong
-Tom memanjat
-Hewan dibuat: Generik
-h2 bukan merupakan objek Kucing, downcasting dibatalkan.
-```
+#### Cara 2: Menggunakan Command Line (Terminal / CMD)
+1. Buka Terminal atau CMD, lalu masuk ke direktori utama (*root folder*) proyek:
+   ```bash
+   cd path/to/-Tugas2_Inherit-polymorph-2526
+   Jalankan perintah kompilasi (`javac`) dan eksekusi (`java`) sesuai soal yang ingin diuji:
+ex:
+* **Soal 1:**
+  ```bash
+  javac src/soal1/*.java
+  java -cp src soal1.TesSoal1
 
-=== BAGIAN B ===
-A dibuat
-init B, nilai=0
-B dibuat, nilai=5
 
-=== BAGIAN C ===
-78.53981633974483
-0.0
-0.0
+## 💻 Contoh Output
 
-**3. Soal 3 (Titik dan Garis)**
-```text
-(0.0, 0.0)-(3.0, 4.0) panjang 5.0
-(1.0, 1.0)-(5.0, 5.0)
-```
+### 1. Soal 1 (Hierarki Perangkat Elektronik)
+![Output Soal 1](Output%20Program/Output%20soal1.png)
 
-**4. Soal 4(Mini Project Toko Digital)**
-```text
-F01 | Keyboard Mekanik | fisik 1.5 kg | Rp515000
-D01 | Ebook Java | digital 20.0 MB | Rp90000
-L01 | Kelas Online | langganan 12 bulan | Rp1440000
-TOTAL: Rp2045000
-Fisik: 1, Digital: 1, Langganan: 1
-Gagal: Kode produk 'F01' sudah ada di dalam keranjang.
-```
+---
 
-**Pertanyaan Tambahan**
-**1.Ketika modifier diubah dari protected menjadi private, **
-```text
-Exception in thread "main" java.lang.Error: Unresolved compilation problems: 
-        The field Perangkat.harga is not visible
-        The field Perangkat.harga is not visible
+### 2. Soal 2 (Analisis Output & Polimorfisme)
+![Output Soal 2](Output%20Program/Output%20soal2.png)
 
-        at soal1.Laptop.hitungHargaPromo(Laptop.java:26)
-        at soal1.TesSoal1.main(TesSoal1.java:13)
-```
-Error karena hak akses private sifatnya sangat ketat dan cuma bisa diakses dari dalam kelas tempat dia dibuat (yaitu kelas Perangkat). Subclass seperti Laptop tidak lagi memiliki hak akses langsung untuk membaca atau memodifikasi variabel harga tersebut secara langsung tanpa melalui method getter/setter.
+---
+
+### 3. Soal 3 (Titik dan Garis)
+![Output Soal 3](Output%20Program/Output%20soal3.png)
+
+---
+
+### 4. Soal 4 (Mini Project Toko Digital)
+![Output Soal 4](Output%20Program/Output%20soal4.png)
+
+---
+
+## ❓ Pertanyaan Tambahan & Analisis Error
+
+### 1. Ketika Modifier `harga` Diubah dari `protected` Menjadi `private`
+
+![Output Error Soal 1](Output%20Program/Output%20error%20soal1.png)
+
+**Penjelasan:**
+Error terjadi karena hak akses `private` bersifat sangat ketat dan hanya dapat diakses dari dalam kelas tempat atribut tersebut dideklarasikan (`Perangkat`). Subclass seperti `Laptop` tidak lagi memiliki akses langsung untuk membaca atau memodifikasi atribut `harga` tanpa melalui method getter/setter.
+---
+
 
 **Jawaban Soal 2**
-**Bagian A:**
-1. Ouput program bagian A:
-``` Hewan dibuat: Tom
-Kucing dibuat
-Tom makan
-meong
-meong
-Tom memanjat
-Hewan dibuat: Generik
-h2 bukan merupakan objek Kucing, downcasting dibatalkan
-```
+#### Bagian A
 
-**2. Jika h.panjat(); dibuka komentar-nya:**
+1. **Output Program Bagian A:**
+   ```text
+   Hewan dibuat: Tom
+   Kucing dibuat
+   Tom makan
+   meong
+   meong
+   Tom memanjat
+   Hewan dibuat: Generik
+   h2 bukan merupakan objek Kucing, downcasting dibatalkan.
+
+2. **Jika h.panjat(); dibuka komentar-nya:**
+
+![Output Error Soal 2](Output%20Program/Output%20error%20soal2.png)
+
 Error: Error Kompilasi (Compile-time Error).
+
 Alasan: Variabel h bertipe statis Hewan. Kelas Hewan tidak memiliki method bernama panjat().
 
 
-**3. Baris yang Menyebabkan ClassCastException & Perbaikannya:**
-Baris Penyebab: Kucing k2 = (Kucing) h2; karena objek asli h2 adalah instansiasi murni dari Hewan, bukan Kucing
-```perbaikan code:
-if (h2 instanceof Kucing) {
-    Kucing k2 = (Kucing) h2;
-    k2.panjat();
-}
-```
+**3. Baris yang Menyebabkan `ClassCastException` & Perbaikannya:**
+- **Baris Penyebab:** `Kucing k2 = (Kucing) h2;`  
+  *Alasan:* Objek asli `h2` merupakan instansiasi murni dari kelas `Hewan`, bukan `Kucing`.
+- **Kode Perbaikan:**
+  ```java
+  if (h2 instanceof Kucing) {
+      Kucing k2 = (Kucing) h2;
+      k2.panjat();
+  }
 
-**4. Eksekusi h.makan() & Konsep Tipe Statis vs Dinamis:**
-Method suara() yang dieksekusi adalah milik Kucing (meong).
-Penjelasan: Tipe statis dari variabel h adalah Hewan (menentukan variabel/method apa saja yang valid dipanggil saat kompilasi). Namun, tipe dinamis dari h saat runtime adalah Kucing. Karena suara() di-override oleh kelas Kucing, Java menggunakan Dynamic Method Dispatch untuk mengeksekusi method suara() milik tipe dinamisnya (Kucing).
+**4. Eksekusi `h.makan()` & Konsep Tipe Statis vs Dinamis:**
+- **Hasil Eksekusi:** *Method* `suara()` yang dieksekusi adalah milik `Kucing` (`meong`).
+- **Penjelasan:** Tipe statis dari variabel `h` adalah `Hewan` (menentukan variabel atau *method* apa saja yang valid dipanggil saat kompilasi). Namun, tipe dinamis dari `h` saat *runtime* adalah `Kucing`. Karena `suara()` di-*override* oleh kelas `Kucing`, Java menggunakan *Dynamic Method Dispatch* untuk mengeksekusi *method* `suara()` milik tipe dinamisnya (`Kucing`).
 
-**Bagian B:**
-Prediksi Output new B() :
-Saat constructor B() dipanggil, ia pertama-tama mengeksekusi super() yaitu constructor A(). Di dalam constructor A(), method init() dipanggil. Karena init() telah di-override di kelas B, method init() milik B yang dijalankan. Pada momen tersebut, inisialisasi field int nilai = 5 di kelas B belum dilakukan (masih berupa nilai default integer 0).
-Risiko: Memanggil method yang dapat di-override (overridable method) dari dalam constructor sangat berbahaya karena method subclass dapat tereksekusi sebelum instance variabel subclass diinisialisasi sepenuhnya.
+#### Bagian B:
 
-**Bagian C:**
-Analisis l3.luas() & Evaluasi Relasi Titik is-a Lingkaran:
-Mengapa 0.0? Karena variabel l3 merujuk ke instance Titik. Berdasarkan polimorfisme, method luas() milik Titik yang mengeksekusi return 0.0.
-Apakah masuk akal? Tidak masuk akal. Secara hirarki dunia nyata dan matematis, Titik bukanlah jenis dari Lingkaran (Titik is not a Lingkaran).
-Konsekuensi: Jika method lain mengekspektasikan objek Lingkaran pasti memiliki area luas > 0, program akan menghasilkan logical bug saat disisipi objek Titik.
+* **Prediksi Output `new B()`:**  
+  Saat *constructor* `B()` dipanggil, ia pertama-tama mengeksekusi `super()` yaitu *constructor* `A()`. Di dalam *constructor* `A()`, *method* `init()` dipanggil. Karena `init()` telah di-*override* di kelas `B`, *method* `init()` milik `B` yang dijalankan. Pada momen tersebut, inisialisasi *field* `int nilai = 5` di kelas `B` belum dilakukan (masih berupa nilai *default* integer `0`).
 
-**Jawaban soal 3:**
-Apa yang tercetak pada baris kedua saat System.out.println(g2); dijalankan dan mengapa? (Tulis prediksi dulu.)
-**- Prediksi Awal:**
-Jika TIDAK pakai Defensive Copy:
-Outputnya bakal (100.0, 1.0) - (5.0, 5.0). Soalnya kalau referensi titiknya cuma dioper biasa, begitu nilai t.setX(100) diubah dari luar, data garis g2 ikut kecolongan berubah (terjadi masalah aliasing).
+* **Risiko:**  
+  Memanggil *method* yang dapat di-*override* (*overridable method*) dari dalam *constructor* sangat berbahaya karena *method subclass* dapat tereksekusi sebelum *instance variable subclass* diinisialisasi secara penuh.
 
-**-Jika PAKAI Defensive Copy (Kondisi Kode yang Benar):**
-Outputnya tetap (1.0, 1.0) - (5.0, 5.0). Soalnya data titik di dalam garis sudah dikloning/dibuatkan objek baru yang terpisah.
+#### Bagian C:
 
-**-Kapan perilaku Sebelum / Sesudah perbaikan lebih tepat?**
-Sebelum Perbaikan (Shared Reference): Tepat saat kita menginginkan shared state mutabel secara real-time (misalnya 2 elemen grafis yang terhubung ke satu node pusat yang sama).
-Sesudah Perbaikan (Defensive Copy): Tepat saat kita menginginkan immutability dan enkapsulasi penuh di mana state internal Garis tidak boleh diubah secara sengaja/tidak sengaja oleh pihak eksternal.
+* **Analisis `l3.luas()`:**
+  * **Mengapa `0.0`?**  
+    Karena variabel `l3` merujuk ke *instance* `Titik`. Berdasarkan prinsip polimorfisme, *method* `luas()` milik `Titik` yang dieksekusi, yang mengembalikan nilai `return 0.0`.
+  * **Apakah masuk akal?**  
+    Tidak masuk akal. Secara hierarki dunia nyata maupun matematis, `Titik` bukanlah jenis dari `Lingkaran` (*Titik is not a Lingkaran*).
 
-**-Masalah Desain jika Garis extends Titik:**
-Pelanggaran Relasi: Terjadi pelanggaran konsep is-a. Garis bukanlah sebuah Titik. Garis memiliki dua buah Titik (has-a).
-Redundansi & Keanehan Data: Jika Garis diwarisi dari Titik, Garis akan mewarisi nilai x dan y tunggal dari parent-nya yang tidak relevan bagi bentuk geometri sebuah garis yang memerlukan koordinat awal dan akhir.
+* **Konsekuensi:**  
+  Jika *method* lain mengekspektasikan setiap objek `Lingkaran` pasti memiliki area luas `> 0`, program akan menghasilkan *logical bug* saat disisipi objek `Titik`.
+
+---
+
+### Jawaban Soal 3
+**Pertanyaan:**  
+Apa yang tercetak pada baris kedua saat `System.out.println(g2);` dijalankan dan mengapa?
+
+* **Prediksi Awal:**
+  * **Jika TIDAK memakai Defensive Copy:**  
+    Outputnya akan `(100.0, 1.0) - (5.0, 5.0)`. Soalnya kalau referensi titiknya hanya dioper biasa, begitu nilai `t.setX(100)` diubah dari luar, data garis `g2` ikut berubah (*terjadi masalah aliasing*).
+  * **Jika MEMAKAI Defensive Copy (Kondisi Kode yang Benar):**  
+    Outputnya tetap `(1.0, 1.0) - (5.0, 5.0)` karena data titik di dalam garis sudah dikloning atau dibuatkan objek baru yang terpisah.
+
+* **Kapan Perilaku Sebelum / Sesudah Perbaikan Lebih Tepat?**
+  * **Sebelum Perbaikan (*Shared Reference*):** Tepat saat kita menginginkan *shared state mutabel* secara *real-time* (misalnya 2 elemen grafis yang terhubung ke satu *node* pusat yang sama).
+  * **Sesudah Perbaikan (*Defensive Copy*):** Tepat saat kita menginginkan *immutability* dan enkapsulasi penuh di mana *state* internal `Garis` tidak boleh diubah secara sengaja maupun tidak sengaja oleh pihak eksternal.
+
+* **Masalah Desain jika `Garis extends Titik`:**
+  * **Pelanggaran Relasi:** Terjadi pelanggaran konsep *is-a*. `Garis` bukanlah sebuah `Titik`, melainkan `Garis` memiliki dua buah `Titik` (*has-a*).
+  * **Redundansi & Keanehan Data:** Jika `Garis` diwarisi dari `Titik`, `Garis` akan mewarisi nilai `x` dan `y` tunggal dari *parent*-nya yang tidak relevan bagi bentuk geometri sebuah garis yang memerlukan koordinat awal dan akhir.
+---
+
+## 💡 Analisis Konsep Pemrograman Berorientasi Objek
+
+---
+1. **Perbedaan Method Overriding dan Method Overloading serta Kaitannya:**
+   - **Method Overriding:** Terjadi saat kelas anak (*subclass*) menulis ulang *method* milik kelas induk (*superclass*) dengan nama, parameter, dan *return type* yang sama persis untuk mengubah atau menyesuaikan perilakunya.  
+     *Contoh:* *Method* `infoSingkat()` pada `LaptopGaming` yang menggantikan `infoSingkat()` milik `Perangkat` agar bisa menampilkan informasi GPU tambahan.
+   - **Method Overloading:** Pemakaian nama *method* yang sama dalam satu kelas tetapi dengan jumlah atau tipe parameter yang berbeda.  
+     *Contoh:* Konstruktor `Garis(Titik, Titik)` dan `Garis(double, double, double, double)`.
+   - **Perbedaan Utama:** Terletak pada waktu eksekusinya, di mana *overriding* bekerja saat program berjalan (*runtime polymorphism*), sedangkan *overloading* ditentukan saat kode dikompilasi (*compile-time polymorphism*).
+
+2. **Memilih Antara Inheritance vs Composition:**
+   - **Inheritance (Pewarisan):** Digunakan ketika hubungan antar-kelas bersifat hirarki murni **"is-a"** (adalah sebuah).  
+     *Contoh:* Kelas `Laptop` menggunakan `extends Perangkat` karena `Laptop` memang merupakan sebuah perangkat elektronik yang mewarisi sifat dasar dari induknya.
+   - **Composition (Komposisi):** Dipakai ketika hubungan antar-objek bersifat **"has-a"** (memiliki atau tersusun dari).  
+     *Contoh:* Kelas `Garis` yang menyimpan objek `Titik` awal dan akhir, karena `Garis` bukanlah sebuah `Titik`, melainkan bentuk geometris yang tersusun atas dua buah objek `Titik`.
+
+3. **Polimorfisme `cetakStruk()` vs Downcasting `hitungPerJenis()`:**
+   - **Mengapa `cetakStruk()` tidak butuh `instanceof`?**  
+     *Method* `cetakStruk()` memanfaatkan fitur polimorfisme murni di mana Java secara otomatis memanggil *method* `deskripsi()` sesuai tipe asli (*runtime type*) dari masing-masing objek.
+   - **Mengapa `hitungPerJenis()` memerlukan `instanceof`?**  
+     Program harus memilah dan memproses rekapitulasi data khusus untuk tipe *subclass* tertentu. Proses pengelompokan ini membutuhkan *downcasting* (mengubah tipe referensi induk kembali ke tipe spesifik anaknya).
+   - **Mengapa *downcasting* tidak selalu aman?**  
+     Melakukan *downcasting* secara paksa tanpa diproteksi oleh pengecekan `instanceof` sangat berbahaya karena jika tipe objek sebenarnya tidak sesuai, Java akan melempar *error* `ClassCastException` yang menyebabkan program *crash* saat dijalankan.
+
+---
+
+## 🛑 Batasan dan Pengembangan Lanjutan
+
+### Batasan Program Saat Ini
+- **Antarmuka Pengguna (UI):** Program masih berbasis *Command Line Interface* (CLI) atau terminal sederhana, belum memiliki antarmuka grafis (GUI) yang interaktif.
+- **Persistensi Data:** Data keranjang belanja dan objek lainnya disimpan secara sementara di memori (*RAM/runtime*), sehingga data akan hilang begitu program ditutup dan belum terhubung ke *database*.
+- **Validasi Input:** Validasi input dari pengakses/pengguna baru diterapkan pada skenario bawaan (*hardcoded test case* di metode `main`), belum menyediakan *input scanner* dinamis secara langsung.
+
+### Rencana Pengembangan Lanjutan
+- **Antarmuka Grafis (GUI):** Mengembangkan tampilan antarmuka interaktif menggunakan **JavaFX** atau **Swing** agar aplikasi lebih nyaman digunakan.
+- **Integrasi Database:** Menambahkan sistem basis data (seperti MySQL atau SQLite) untuk menyimpan data produk dan histori transaksi secara permanen.
+- **Sistem Pembayaran & Fitur Bundel:** Mengimplementasikan modul `ProdukBundel` (opsional) serta menambahkan simulasi metode pembayaran digital (e-wallet / transfer bank).
 
 
-**## Analisis Konsep:**
-**1. Perbedaan Method Overriding dan Method Overloading serta Kaitannya:**
-Method overriding terjadi saat kelas anak menulis ulang method milik kelas induk dengan nama, parameter, dan return type yang sama persis untuk mengubah perilakunya. Contohnya adalah method infoSingkat() pada LaptopGaming yang menggantikan infoSingkat() milik Perangkat agar bisa menampilkan info GPU. Sementara itu, method overloading adalah pemakaian nama method yang sama dalam satu kelas tetapi dengan jumlah atau tipe parameter yang berbeda, seperti pada konstruktor Garis(Titik, Titik) dan Garis(double, double, double, double). Perbedaan utamanya ada pada waktu eksekusi: overriding bekerja saat program berjalan (runtime), sedangkan overloading ditentukan saat kode dikompilasi (compile-time).
-
-**2. Memilih Antara Inheritance vs Composition:**
-Inheritance (pewarisan) digunakan ketika hubungan antar-kelas bersifat hirarki murni "is-a" (adalah sebuah). Pada tugas ini, kelas Laptop menggunakan extends Perangkat karena Laptop memang merupakan sebuah perangkat elektronik yang mewarisi sifat induknya. Sedangkan Composition (komposisi) dipakai jika hubungannya bersifat "has-a" (memiliki/tersusun dari). Contohnya kelas Garis yang menyimpan objek Titik awal dan akhir, karena Garis bukan sebuah Titik, melainkan bangun yang tersusun dari dua buah Titik.
-
-**3.  Pada Soal 4, mengapa cetakStruk() tidak memerlukan instanceof sedangkan hitungPerJenis() 
-memerlukannya? Mengapa downcasting tidak selalu aman?**
-Method cetakStruk() tidak butuh pengecekan instanceof karena memanfaatkan polimorfisme murni di mana Java otomatis memanggil method deskripsi() sesuai tipe asli objeknya. Sebaliknya, hitungPerJenis() wajib memakai instanceof karena program harus memilah dan menghitung total harga khusus untuk tipe subclass tertentu. Proses pemilahan ini membutuhkan downcasting (mengubah tipe induk kembali ke tipe spesifik anaknya). Melakukan downcasting tanpa diproteksi instanceof sangat berbahaya karena bisa memicu error ClassCastException yang membuat program crash.
